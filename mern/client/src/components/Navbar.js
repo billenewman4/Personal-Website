@@ -5,6 +5,26 @@ import React from "react";
 import { Link, } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
+const links = [
+  { id: "1a", to: "/About", text: "About Me" },
+  { id: "1p", to: "/projects", text: "Projects" },
+  { id: "1b", to: "/blog", text: "Blog" }
+];
+
+function NavBarElements({links}){
+  return (
+    <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center">
+    {links.map((link, index) => {
+      return(
+          <Link key={link.id} to={link.to} className="mr-5 hover:text-blue-500">
+            {link.text}
+          </Link>
+      );
+    })}
+    </nav>
+  );
+}
+
 
 export default function Navbar() {
   return (
@@ -14,20 +34,7 @@ export default function Navbar() {
         <a className="title-font font-medium text-black mb-4 md:mb-0">
           <Link className="ml-3 text-xl" to ="/">Bill Newman</Link >
         </a>
-        <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
-          <Link to= "/About" className="mr-5 hover:text-blue-500">
-            About Me
-          </Link>
-          <a href="#projects" className="mr-5 hover:text-blue-500">
-            CV
-          </a>
-          <a href="#projects" className="mr-5 hover:text-blue-500">
-            Projects
-          </a>
-          <a href="#skills" className="mr-5 hover:text-blue-500">
-            Skills
-          </a>
-        </nav>
+        <NavBarElements links={links} />
       </div>
     </header>
     <div id="detail">
