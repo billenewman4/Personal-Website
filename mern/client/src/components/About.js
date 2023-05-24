@@ -31,31 +31,29 @@ const aboutMeSections = [
 
 function ButtonsWithinPage({buttons}){
   return (
-    <>
     <div className="w-full p-5 grid grid-cols-1 md:grid-cols-3 gap-5">
-      {buttons.map(buttons => (
-        <div key={buttons.id} className="bg-white p-5 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
-          <a href={buttons.href} className="text-gray-900 font-medium hover:text-purple-600 transition-colors duration-200">
-            {buttons.text}
+      {buttons.map(button => (
+        <div key={button.id} className="bg-gray-800 text-gray-100 p-5 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
+          <a href={button.href} className="text-gray-100 font-medium hover:text-blue-500 transition-colors duration-200">
+            {button.text}
           </a>
         </div>
       ))}
     </div>
-    </>
   );
 }
 
 function TextBlocks({aboutMeText}){
   return (
     <>
-    {aboutMeText.map(aboutMeText => (
-      <div key={aboutMeText.id} className="w-full p-5 mb-5 bg-blue-50 rounded-lg shadow">
-        <section id={aboutMeText.id} style={{ scrollMarginTop: "+7rem" }}>
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-800">
-          {aboutMeText.title}
+    {aboutMeText.map(section => (
+      <div key={section.id} className="w-full p-5 mb-5 bg-gray-900 text-white rounded-lg shadow">
+        <section id={section.id} style={{ scrollMarginTop: "+7rem" }}>
+          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">
+          {section.title}
           </h1>
-            <p className="mb-8 leading-relaxed text-gray-700">
-            {aboutMeText.text}
+            <p className="mb-8 leading-relaxed text-white">
+            {section.text}
             </p>
         </section>
       </div>
@@ -66,12 +64,10 @@ function TextBlocks({aboutMeText}){
 
 const About = () => {
   return (
-    <>
-    <div className="container mx-auto flex flex-col px-10 py-20 items-center bg-black">
+    <div className="container mx-auto flex flex-col px-10 py-20 items-center bg-gray-900">
     <ButtonsWithinPage buttons={buttons} />
     <TextBlocks aboutMeText={aboutMeSections} />
     </div>
-    </>
   );
 };
 
