@@ -3,7 +3,7 @@ import React from "react";
 const buttons = [
   { id: "1m", href: "#McKinsey", text: "McKinsey Experience" },
   { id: "1i", href: "#Internships", text: "Internships" },
-  { id: "1e", href: "#Extra circulars", text: "Extra circulars" },
+  { id: "1e", href: "#Extracurriculars", text: "Extracurriculars" },
 ];
 
 const aboutMeSections = [
@@ -23,8 +23,8 @@ const aboutMeSections = [
     text: "Before joining McKinsey, I interned at Deloitte Consulting, AT&T, and Atmos Energy Corporation. These experiences honed my skills in various areas, such as cybersecurity, network optimization, and data visualization."
   },
   {
-    id: "Extra circulars",
-    title: "Extra Cirrculars",
+    id: "Extracurriculars",
+    title: "Extracurriculars",
     text: "In terms of leadership, I served as the Treasurer for the Century Men’s Society and was a selected member of the Zachry Leadership Program. I also co-founded Ntwrk, a start-up during my university years. Recognized for my community service, I received the Ad Astra award and was a finalist in the Aggie Pitch. My technical skills include Python, C++, MySQL, R, JavaScript, PHP, CSS, HTML, MATLAB, Alteryx, and Microsoft Excel. I'm also conversational in Spanish. Outside of work, I have a keen interest in basketball, tennis, and international travel. I also enjoy listening to podcasts, exploring the world of wine, volunteering in my community, and keeping up with the latest trends in artificial intelligence and cybersecurity."
   },
 ];
