@@ -7,6 +7,7 @@ import HomeContent from "./components/HomeContent";
 import ErrorPage from "./components/Error"
 import reportWebVitals from './reportWebVitals';
 import About from './components/About';
+import Contact from './components/Contact'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -25,8 +26,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/About",
-        element: <About />,
+        path: "/WorkWithMe",
+        element: <Contact />,
       },
     ],
   },

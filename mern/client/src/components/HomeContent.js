@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, } from "react-router-dom";
 
 export default function HomeContent() {
   return (
@@ -18,12 +19,9 @@ export default function HomeContent() {
             My background in computer engineering, coupled with my consulting and business education, equips me to excel in bridging technology and business domains.
           </p>
           <div className="flex justify-center space-x-4">
-            <a
-              href="#contact"
-              className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg"
-            >
-              Work With Me
-            </a>
+          <Link key="Work With Me" to="/WorkWithMe" className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">
+            Work With Me
+          </Link>
             <a
               href="#projects"
               className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg"
