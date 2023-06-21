@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 
+const formElements = [
+  { id: "name", type: "text", label: "Name:" },
+  { id: "email", type: "email", label: "Email:" },
+  { id: "message", type: "textarea", label: "Message:" },
+];
+
 const ContactForm = () => {
   const [status, setStatus] = useState("Submit");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
@@ -22,21 +29,24 @@ const ContactForm = () => {
     let result = await response.json();
     alert(result.status);
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" required />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" required />
-      </div>
-      <div>
-        <label htmlFor="message">Message:</label>
-        <textarea id="message" required />
-      </div>
-      <button type="submit">{status}</button>
+    <form onSubmit={handleSubmit} className="w-full p-5 bg-gray-900 text-white rounded-lg shadow">
+      {formElements.map((element) => (
+        <div key={element.id} className="w-full p-5 mb-5 bg-gray-900 text-white rounded-lg shadow">
+          <label htmlFor={element.id} className="text-gray-100 font-medium">
+            {element.label}
+          </label>
+          {element.type !== 'textarea' ? (
+            <input type={element.type} id={element.id} required className="w-full p-2 mt-2 bg-gray-800 text-white rounded" />
+          ) : (
+            <textarea id={element.id} required className="w-full p-2 mt-2 bg-gray-800 text-white rounded"/>
+          )}
+        </div>
+      ))}
+      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        {status}
+      </button>
     </form>
   );
 };
