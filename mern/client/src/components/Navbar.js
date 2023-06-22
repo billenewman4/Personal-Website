@@ -7,8 +7,8 @@ import { Outlet } from "react-router-dom";
 
 const links = [
   { id: "1a", to: "/About", text: "About Me" },
-  { id: "1p", to: "/projects", text: "Projects" },
-  { id: "1b", to: "/blog", text: "Blog" }
+  { id: "1p", to: "/Projects", text: "Projects" },
+  { id: "1b", to: "/Blog", text: "Blog" }
 ];
 
 function NavBarElements({links}){
