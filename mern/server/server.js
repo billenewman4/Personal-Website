@@ -8,7 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
-app.listen(5001, () => console.log("Server Running"));
+// Listen to the App Engine-specified port, or 8080 otherwise
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}...`);
+});
 
 const contactEmail = nodemailer.createTransport({
     service: 'gmail',
