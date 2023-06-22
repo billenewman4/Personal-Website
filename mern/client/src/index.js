@@ -7,13 +7,16 @@ import HomeContent from "./components/HomeContent";
 import ErrorPage from "./components/Error"
 import reportWebVitals from './reportWebVitals';
 import About from './components/About';
+import Blog from './components/Blog';
 import Contact from './components/Contact'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
-
+/*
+Router for links intenral to teh websit. Default error page as well as loading home contnet as index
+*/
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/WorkWithMe",
         element: <Contact />,
+      },
+      {
+        path: "/Blog",
+        element: <Blog />,
       },
     ],
   },
