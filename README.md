@@ -1,22 +1,25 @@
-# Personal-Website
-Source code for my website (ENTER URL)
+# Personal Website Repository
 
-# Project set-up
-Project created using create-react-app
-Utilizes tailwind CSS for styling
-Using a node.js server (currently facilitates emails in contact form)
+This is the source code for my personal website. You can check out the live version [here](https://personal-website-usw2.vercel.app).
 
-Please see package.json for list of dependencies in both the server and the client
+## Project Setup
 
-# Front-end
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and styled with [Tailwind CSS](https://tailwindcss.com/).
 
-# NavBar
-Default navbar loaded accross all pages
+A Node.js server is used to handle email functionality in the contact form. For a complete list of dependencies used in both the client and the server side, refer to the `package.json` file.
 
-# Components
-React scripts to create content on pages throughout the website
+## Frontend
 
-# Contact form / Back-end
-Server.js is set-up to listen for a submission on the contact form and utilizes nodemailer to send an email my personal email. 
+### Navigation Bar
 
-Email credentials are hidden using .env file. If implementing on your own, create your own env file to save credentials
+A default navigation bar is loaded across all pages of the website.
+
+### Components
+
+Various React components are used to create and manage content on different pages throughout the website.
+
+## Contact Form and Backend
+
+The `server.js` file is set up to listen for form submissions from the contact page and utilizes [Nodemailer](https://nodemailer.com/about/) to send an email to my personal address.
+
+The email credentials are securely stored using a `.env` file. When implementing this project in your own environment, ensure to create your own `.env` file for storing sensitive credentials.
