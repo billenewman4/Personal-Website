@@ -18,7 +18,7 @@ const ContactForm = () => {
       email: email.value,
       message: message.value,
     };
-    let response = await fetch("https://personal-website-server-390615.uc.r.appspot.com", {
+    let response = await fetch("https://personal-website-server-390615.uc.r.appspot.com/contactServer", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
