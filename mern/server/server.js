@@ -51,7 +51,7 @@ Promise.all([accessSecretVersion('Gmail'), accessSecretVersion('gmail_password')
       }
     });
 
-    router.post("/contactServer", (req, res) => {
+    router.post("/", (req, res) => {
       const name = req.body.name;
       const email = req.body.email;
       const message = req.body.message; 
