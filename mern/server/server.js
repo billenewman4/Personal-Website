@@ -50,8 +50,17 @@ Promise.all([accessSecretVersion('Gmail'), accessSecretVersion('gmail_password')
         console.log("Ready to Send");
       }
     });
+    router.get("/", (req, res) => {
+      res.send("Hello, world!");
+    });
 
     router.post("/", (req, res) => {
+
+      if (!gmailUser || !gmailPass) {
+        res.json({ status: "Error: Gmail user or password not set" });
+        return;
+      }
+
       const name = req.body.name;
       const email = req.body.email;
       const message = req.body.message; 

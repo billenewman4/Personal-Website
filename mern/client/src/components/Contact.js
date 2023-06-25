@@ -24,6 +24,8 @@ const ContactForm = () => {
         "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify(details),
+    }).catch(error => {
+      console.error('Error:', error);
     });
     setStatus("Submit");
     let result = await response.json();
