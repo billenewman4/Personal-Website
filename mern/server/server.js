@@ -21,15 +21,19 @@ let gmailPass;
 
 async function accessSecretVersion(secretName) {
   const [version] = await client.accessSecretVersion({
-    name: `projects/personal-website-server-390615/secrets/${secretName}/versions/latest`,
+    name: secretName,
   });
 
   const payload = version.payload.data.toString('utf8');
-
   return payload;
 }
 
-Promise.all([accessSecretVersion('Gmail'), accessSecretVersion('gmail_password')])
+router.get("/", (req, res) => {
+  res.send("Hello, world!");
+});
+
+
+Promise.all([accessSecretVersion('projects/754015397253/secrets/Gmail/versions/latest'), accessSecretVersion('projects/754015397253/secrets/Gmail_Password/versions/latest')])
   .then(([user, pass]) => {
     gmailUser = user;
     gmailPass = pass;
@@ -49,9 +53,6 @@ Promise.all([accessSecretVersion('Gmail'), accessSecretVersion('gmail_password')
       } else {
         console.log("Ready to Send");
       }
-    });
-    router.get("/", (req, res) => {
-      res.send("Hello, world!");
     });
 
     router.post("/", (req, res) => {
@@ -81,5 +82,7 @@ Promise.all([accessSecretVersion('Gmail'), accessSecretVersion('gmail_password')
       });
     });
 
-  })
-  .catch(console.error);
+  }).catch((error) => {
+    console.log(error);
+    process.exit(1);
+  });
