@@ -8,7 +8,6 @@ import ErrorPage from "./components/Error"
 import reportWebVitals from './reportWebVitals';
 import About from './components/About';
 import Blog from './components/Blog';
-import Projects from './components/Projects';
 import Contact from './components/Contact'
 import {
   createBrowserRouter,
