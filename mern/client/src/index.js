@@ -8,11 +8,13 @@ import ErrorPage from "./components/Error"
 import reportWebVitals from './reportWebVitals';
 import About from './components/About';
 import Blog from './components/Blog';
+import Projects from './components/Projects';
 import Contact from './components/Contact'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Projects from './components/Projects';
 
 /*
 Router for links intenral to teh websit. Default error page as well as loading home contnet as index
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/Blog",
         element: <Blog />,
+      },
+      {
+        path: "/Projects",
+        element: <Projects />,
       },
     ],
   },

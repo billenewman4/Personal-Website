@@ -1,9 +1,9 @@
 const projects = [
         {
-            id: "Project 1",
-            title: "Project 1 Title",
-            link: "https://github.com/your-username/project-1", // Update with your own project link
-            description: "Description of Project 1"
+            id: "WanderWisz",
+            title: "WanderWisz",
+            link: "https://www.wanderwisz.com",
+            description: "Discover budget travel made easy"
         },
         // more of your projects...
 ];
