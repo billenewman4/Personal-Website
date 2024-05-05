@@ -10,13 +10,13 @@ export default function HomeContent() {
             Hi, I'm Bill.
           </h1>
           <p className="mb-8 leading-relaxed text-lg">
-            I am a <span className="font-semibold text-blue-400">Computer Engineer</span> from Texas with three years of experience at <span className="font-semibold text-blue-400">McKinsey & Company</span>.
+            I am a <span className="font-semibold text-blue-400">Computer Engineer</span> from Texas with work experience at <span className="font-semibold text-blue-400">McKinsey & Company, impact investing, and an Ag-Tech startup</span>.
           </p>
           <p className="mb-8 leading-relaxed text-lg">
-            Currently, I am attending business school at <span className="font-semibold text-blue-400">INSEAD</span>, expanding my knowledge and skills in business and leadership while gaining a perspective on different cultures.
+            Currently, I am attending business school at <span className="font-semibold text-blue-400">MIT</span>, where I am excited to gain further experience in the tech startup world, participating in start-up competitions, taking advance computer science courses, and learning from my peers on campus.
           </p>
           <p className="mb-8 leading-relaxed text-lg">
-            My background in computer engineering, coupled with my consulting and business education, equips me to excel in bridging technology and business domains.
+            I believe my unique background with experience in business, knowledge of computer science, and passion for the way technology can improve lives make me a great candidate for any venture capital firm looking for a <span className="font-semibold text-blue-400">Investment Associate</span> or a startup looking for a <span className="font-semibold text-blue-400">GTM lead</span>.
           </p>
           <div className="flex justify-center space-x-4">
           <Link key="Work With Me" to="/WorkWithMe" className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">

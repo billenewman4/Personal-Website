@@ -55,34 +55,34 @@ Promise.all([accessSecretVersion('projects/754015397253/secrets/Gmail/versions/l
       }
     });
 
-    router.post("/", (req, res) => {
+  router.post("/", (req, res) => {
 
-      if (!gmailUser || !gmailPass) {
-        res.json({ status: "Error: Gmail user or password not set" });
-        return;
+    if (!gmailUser || !gmailPass) {
+      res.json({ status: "Error: Gmail user or password not set" });
+      return;
+    }
+
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message; 
+    const mail = {
+      from: name,
+      to: "15237bn@gmail.com",
+      subject: "Contact Form Submission",
+      html: `<p>Name: ${name}</p>
+            <p>Email: ${email}</p>
+            <p>Message: ${message}</p>`,
+    };
+    contactEmail.sendMail(mail, (error) => {
+      if (error) {
+        res.json({ status: "ERROR" });
+      } else {
+        res.json({ status: "Message Sent" });
       }
-
-      const name = req.body.name;
-      const email = req.body.email;
-      const message = req.body.message; 
-      const mail = {
-        from: name,
-        to: "15237bn@gmail.com",
-        subject: "Contact Form Submission",
-        html: `<p>Name: ${name}</p>
-              <p>Email: ${email}</p>
-              <p>Message: ${message}</p>`,
-      };
-      contactEmail.sendMail(mail, (error) => {
-        if (error) {
-          res.json({ status: "ERROR" });
-        } else {
-          res.json({ status: "Message Sent" });
-        }
-      });
     });
-
-  }).catch((error) => {
-    console.log(error);
-    process.exit(1);
   });
+
+}).catch((error) => {
+  console.log(error);
+  process.exit(1);
+});
